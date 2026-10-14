@@ -24,12 +24,14 @@ def get_area_history(location):
     return {"location": loc["name"], "history": loc["history"]}
 
 
-def compute_severity(location):
+def compute_severity(location, extra_coverage=None):
     loc = _find(location)
     if loc is None:
         return {"error": f"Unknown location: {location}"}
 
     cov = [r["coverage"] for r in loc["history"]]
+    if extra_coverage is not None:
+        cov.append(extra_coverage)  # a pending reading that is not saved yet
     first, latest = cov[0], cov[-1]
     change = round(latest - first, 2)
 
@@ -81,6 +83,8 @@ def flag_for_reinspection(location, reason):
         json.dump(flags, f, indent=2)
 
     return {"flagged": loc["name"], "reason": reason}
+
+
 def record_reading(location, count, coverage):
     with open(DATA_FILE) as f:
         data = json.load(f)
