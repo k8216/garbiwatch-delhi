@@ -1,0 +1,8 @@
+.env
+venv/
+runs/
+Garbage-Detection-1/
+__pycache__/
+flags.json
+yolov8n.pt
+download_dataset.py

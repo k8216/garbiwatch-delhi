@@ -1,0 +1,10 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit==1.65.0
+ultralytics==8.4.173
+folium==0.20.0
+matplotlib
+numpy
+groq
+python-dotenv
+torch
+torchvision

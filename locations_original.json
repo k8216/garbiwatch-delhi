@@ -1,0 +1,54 @@
+{
+  "locations": [
+    {
+      "name": "Dwarka Sector 10 Market",
+      "lat": 28.5823,
+      "lon": 77.0500,
+      "history": [
+        {"date": "2026-09-14", "count": 1, "coverage": 0.10},
+        {"date": "2026-09-28", "count": 2, "coverage": 0.25},
+        {"date": "2026-10-05", "count": 3, "coverage": 0.45}
+      ]
+    },
+    {
+      "name": "Najafgarh Road Roadside",
+      "lat": 28.6180,
+      "lon": 77.0200,
+      "history": [
+        {"date": "2026-09-14", "count": 3, "coverage": 0.60},
+        {"date": "2026-09-28", "count": 3, "coverage": 0.62},
+        {"date": "2026-10-05", "count": 3, "coverage": 0.61}
+      ]
+    },
+    {
+      "name": "Sector 21 Metro Station",
+      "lat": 28.5521,
+      "lon": 77.0580,
+      "history": [
+        {"date": "2026-09-14", "count": 2, "coverage": 0.40},
+        {"date": "2026-09-28", "count": 1, "coverage": 0.20},
+        {"date": "2026-10-05", "count": 0, "coverage": 0.00}
+      ]
+    },
+    {
+      "name": "Palam Vihar Nala Side",
+      "lat": 28.5950,
+      "lon": 77.0900,
+      "history": [
+        {"date": "2026-09-14", "count": 1, "coverage": 0.15},
+        {"date": "2026-09-28", "count": 1, "coverage": 0.10},
+        {"date": "2026-10-05", "count": 1, "coverage": 0.12}
+      ]
+    },
+    {
+      "name": "Uttam Nagar Main Road",
+      "lat": 28.6190,
+      "lon": 77.0550,
+      "history": [
+        {"date": "2026-09-14", "count": 0, "coverage": 0.00},
+        {"date": "2026-09-28", "count": 2, "coverage": 0.30},
+        {"date": "2026-10-05", "count": 4, "coverage": 0.70}
+      ]
+    }
+  ]
+}
