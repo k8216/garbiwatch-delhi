@@ -121,3 +121,13 @@ def reset_complaints():
         os.remove(COMPLAINTS_FILE)
     if os.path.isdir(UPLOAD_DIR):
         shutil.rmtree(UPLOAD_DIR)
+        
+
+def set_ai_result(complaint_id, ai, advice, priority):
+    complaints = all_complaints()
+    for c in complaints:
+        if c["id"] == complaint_id:
+            c["ai"] = ai
+            c["advice"] = advice
+            c["priority"] = priority
+    _save(complaints)
