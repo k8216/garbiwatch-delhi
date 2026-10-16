@@ -30,6 +30,7 @@ from complaints import (
 from dashboard import GREEN, RED, YELLOW, history_frame, load_flags, location_statuses
 from detect import analyze
 from heatmap import build_map
+from imaging import to_jpeg_bytes
 from seed import ensure_demo_data, reset_demo
 from tools import compute_severity, record_reading
 from vision import analyze_waste
@@ -212,12 +213,18 @@ def public_view():
         note = st.text_area("Anything we should know? (optional)", max_chars=300)
         uploaded = st.file_uploader(
             "Street photo",
-            type=["jpg", "jpeg", "png"],
+                        type=["jpg", "jpeg", "jfif", "png", "webp", "bmp", "gif", "tif", "tiff", "heic", "heif", "avif"],
             key=f"photo_{st.session_state['upload_nonce']}",
         )
 
-        if uploaded is not None:
-            photo_bytes = uploaded.getvalue()
+    photo_bytes = None
+    if uploaded is not None:
+            try:
+                photo_bytes = to_jpeg_bytes(uploaded.getvalue())
+            except Exception:
+                st.error("We could not read that file as a photo. Please try another image.")
+
+    if photo_bytes is not None:
             numbers, annotated = analyze_photo(photo_bytes)
             st.image(annotated, caption="What the AI detected", channels="RGB")
 
